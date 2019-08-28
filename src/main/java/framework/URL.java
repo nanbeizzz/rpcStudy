@@ -1,13 +1,15 @@
 package framework;
 
+import java.io.Serializable;
+
 /**
  * @author tanghf
  * @className framework.URL.java
  * @createTime 2019/8/21 11:39
  */
-public class URL {
+public class URL implements Serializable{
     private String hostname;
-    private int port;
+    private Integer port;
 
     public URL(String hostname, int port) {
         this.hostname = hostname;

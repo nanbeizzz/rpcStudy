@@ -1,10 +1,7 @@
 package consumer;
 
-import protocal.http.HttpClient;
-import protocal.http.Invocation;
+import framework.Proxy;
 import provider.api.HelloService;
-
-import java.lang.reflect.Method;
 
 /**
  * @author tanghf
@@ -15,9 +12,8 @@ public class Consumer {
 
     public static void main(String[] args) throws NoSuchMethodException {
 
-        HttpClient httpClient = new HttpClient();
-        Invocation invocation = new Invocation(HelloService.class.getName(), "sayHello", new Class[]{String.class}, new Object[]{"world"});
-        String result = httpClient.send("localhost", 8080, invocation);
+        HelloService proxy = Proxy.getProxy(HelloService.class);
+        String result = proxy.sayHello("zzz");
         System.out.println(result);
 
     }

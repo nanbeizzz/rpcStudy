@@ -1,5 +1,6 @@
 package protocal.http;
 
+import framework.Invocation;
 import org.apache.commons.io.IOUtils;
 
 import java.io.*;

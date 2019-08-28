@@ -1,4 +1,4 @@
-package protocal.http;
+package framework;
 
 import java.io.Serializable;
 import java.util.List;

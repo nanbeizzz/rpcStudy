@@ -1,6 +1,7 @@
 package provider;
 
 import framework.URL;
+import protocal.dubbo.NettyServer;
 import protocal.http.HttpServer;
 import provider.api.HelloService;
 import provider.impl.HelloServiceImpl;
@@ -25,7 +26,7 @@ public class Provider {
         RemoteRegister.register(HelloService.class.getName(), url);
 
         //3.启动tomcat
-        HttpServer httpServer = new HttpServer();
+        NettyServer httpServer = new NettyServer();
         httpServer.start("localhost", 8080);
 
     }
